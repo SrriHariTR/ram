@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+}
+
+.logo {
+  color: #f5a300;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+  font-size: 14px;
+}
+
+.toggle {
+  width: 48px;
+  height: 24px;
+  background: #f5a300;
+  border-radius: 20px;
+  position: relative;
+}
+
+.toggle::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: black;
+  border-radius: 50%;
+  right: 3px;
+  top: 3px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BIG TEXT */
+.big-text {
+  font-size: 180px;
+  font-weight: 900;
+  color: #bfbfbf;
+  letter-spacing: 5px;
+}
+
+/* WELCOME TEXT */
+.welcome {
+  position: absolute;
+  top: 90px;
+  font-family: 'Pacifico', cursive;
+  color: #f5a300;
+  font-size: 48px;
+}
+
+/* SIDE TEXTS */
+.left-text {
+  position: absolute;
+  left: 60px;
+  bottom: 180px;
+  font-size: 14px;
+  color: #cfcfcf;
+}
+
+.right-text {
+  position: absolute;
+  right: 60px;
+  bottom: 180px;
+  font-size: 14px;
+  color: #cfcfcf;
+}
+
+/* PERSON IMAGE */
+.person {
+  position: absolute;
+  bottom: 0;
+  width: 530px;   /* increased */
+}
+
+/* ICONS */
+.icons {
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.search {
+  color: #7aa7ff;
+}
+
+.play {
+  color: #f5a300;
+}
