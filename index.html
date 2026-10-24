@@ -1,45 +1,736 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="logo">RPHS</div>
+  <title>MES/MOM Consulting, Industrial AI & Manufacturing Solutions | Decimal Automation</title>
 
-      <ul class="nav-links">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
+  <meta name="description" content="Decimal Automation helps manufacturers with MES/MOM consulting, implementation and modernization, industrial integration, manufacturing AI, quality analytics, energy intelligence, predictive maintenance, and MES support.">
 
-      <div class="toggle"></div>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#10243a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Decimal Automation | MES/MOM & Industrial AI">
+  <meta property="og:description" content="Manufacturing systems, industrial integration and practical AI solutions for manufacturing operations.">
+
+  <!-- Replace with your actual canonical homepage URL after publishing. -->
+  <!-- <link rel="canonical" href="https://YOUR-DOMAIN/"> -->
+
+  <style>
+    :root {
+      --navy: #10243a;
+      --ink: #15283b;
+      --teal: #00a6a0;
+      --pale: #e9f7f6;
+      --paper: #f7fafc;
+      --muted: #607184;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    a {
+      transition: opacity 0.2s ease, background 0.2s ease;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 4px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 20px 6%;
+      background: white;
+      border-bottom: 1px solid #e4ebf1;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      white-space: nowrap;
+      font-size: 17px;
+    }
+
+    .brand span {
+      color: var(--teal);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
+    .hero {
+      padding: 78px 6%;
+      background: linear-gradient(120deg, #10243a, #16475b 65%, #087f83);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #008e89;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .hero .eyebrow {
+      color: #8be5df;
+    }
+
+    h1 {
+      font-size: clamp(36px, 4.6vw, 60px);
+      line-height: 1.08;
+      margin: 18px 0;
+      letter-spacing: -0.035em;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #d9e8ee;
+      max-width: 700px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 17px;
+      background: var(--teal);
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: 700;
+      margin: 10px 8px 0 0;
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #9fc5ce;
+    }
+
+    .visual {
+      padding: 20px;
+      border: 1px solid #5f8d9c;
+      border-radius: 16px;
+      background: #ffffff0b;
+    }
+
+    .node {
+      background: #17394d;
+      border: 1px solid #76b9be;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 10px auto;
+      max-width: 280px;
+    }
+
+    .arrow {
+      text-align: center;
+      color: #8be5df;
+      font-size: 20px;
+    }
+
+    section {
+      padding: 64px 6%;
+    }
+
+    .band {
+      background: var(--pale);
+    }
+
+    h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.15;
+      color: var(--navy);
+      margin: 10px 0 14px;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      line-height: 1.3;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .section-intro {
+      max-width: 820px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border: 1px solid #e3ebf0;
+      border-radius: 12px;
+      min-width: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px #10243a0d;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin: 10px 0;
+    }
+
+    .card p {
+      margin-bottom: 0;
+    }
+
+    .num {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .step {
+      padding: 20px;
+      background: white;
+      border-top: 3px solid var(--teal);
+      border-radius: 0 0 8px 8px;
+    }
+
+    .step p {
+      margin-bottom: 0;
+    }
+
+    .cta {
+      background: var(--navy);
+      color: white;
+      padding: 48px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .cta h2 {
+      color: white;
+    }
+
+    .cta p {
+      color: #d7e4eb;
+      max-width: 700px;
+    }
+
+    footer {
+      padding: 24px 6%;
+      background: white;
+      color: #687b8a;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 12px 18px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .brand {
+        white-space: normal;
+      }
+
+      nav {
+        gap: 10px 14px;
+      }
+
+      .hero {
+        padding: 54px 5%;
+      }
+
+      section {
+        padding: 48px 5%;
+      }
+
+      .cards,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        padding: 42px 5%;
+        display: block;
+      }
+
+      footer {
+        padding: 22px 5%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="brand" href="#home" aria-label="Decimal Automation homepage" style="text-decoration:none">
+      DECIMAL <span>AUTOMATION</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#solutions">Solutions</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <!-- Hero -->
-    <section class="hero">
-      <h2 class="welcome">Welcome</h2>
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">
+          MES/MOM • Industrial Integration • Manufacturing AI
+        </div>
 
-      <h1 class="big-text">RAMKUMAR</h1>
+        <h1>MES/MOM, Industrial Integration & AI for Manufacturing</h1>
 
-      <p class="left-text">Creative Portfolio Presentation</p>
-      <p class="right-text">Presented By: Srri Hari</p>
+        <p>
+          Decimal Automation helps manufacturers connect industrial data,
+          modernize manufacturing systems, and explore practical AI for
+          quality, process performance, energy intelligence and predictive
+          maintenance. We focus on business problems, usable data and
+          solutions designed around real operational requirements.
+        </p>
 
-      <img src="image.png" width="900px" class="person" alt="person" />
+        <a class="btn" href="#contact">Discuss Your Requirements</a>
+        <a class="btn secondary" href="#solutions">Explore Solutions</a>
+      </div>
 
-      <!-- <div class="icons">
-        <span class="search">🔍</span>
-        <span class="play">▶</span>
-      </div> -->
+      <div class="visual" aria-label="Industrial data and AI workflow">
+        <div class="node">Machines • Shop-Floor Systems • MES • ERP</div>
+        <div class="arrow" aria-hidden="true">↓</div>
+        <div class="node">Industrial Data & Integration</div>
+        <div class="arrow" aria-hidden="true">↓</div>
+        <div class="node">Analytics • AI/ML • Copilots • Workflows</div>
+        <div class="arrow" aria-hidden="true">↓</div>
+        <div class="node">Human-Reviewed Insights & Actions</div>
+      </div>
     </section>
-  </body>
+
+    <section id="solutions">
+      <div class="eyebrow">Manufacturing solutions</div>
+      <h2>Practical Solutions for Manufacturing Operations</h2>
+
+      <p class="muted section-intro">
+        Explore opportunities across manufacturing execution, industrial
+        integration and AI. Start with a defined operational challenge,
+        assess available data and validate the solution against agreed
+        business requirements.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="num">01 / MES & MOM</div>
+          <h3>Manufacturing Execution Systems</h3>
+          <p class="muted">
+            Explore MES/MOM requirements, production workflows, system
+            integration and modernization opportunities aligned with
+            manufacturing operations.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="num">02 / OPERATIONS</div>
+          <h3>Machine & Process Intelligence</h3>
+          <p class="muted">
+            Analyze machine and process data to investigate unusual operating
+            patterns, process drift, downtime indicators and production
+            variation.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="num">03 / QUALITY</div>
+          <h3>Quality & Yield Analytics</h3>
+          <p class="muted">
+            Investigate patterns associated with defects, rework, yield
+            variation and quality performance using available production
+            and inspection data.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="num">04 / ENERGY</div>
+          <h3>Energy Intelligence</h3>
+          <p class="muted">
+            Analyze energy consumption in context with machine states,
+            throughput, production schedules and operating conditions
+            to identify potential efficiency opportunities.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="num">05 / MAINTENANCE</div>
+          <h3>Predictive Maintenance</h3>
+          <p class="muted">
+            Explore sensor, equipment and maintenance-history data to
+            identify patterns that may indicate equipment degradation
+            or emerging maintenance needs.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="num">06 / INTEGRATION</div>
+          <h3>Industrial Data Integration</h3>
+          <p class="muted">
+            Connect suitable OT, IoT, MES, ERP, quality and maintenance
+            data sources to support consistent information flow from
+            shop-floor systems to analytics and AI applications.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" id="services">
+      <div class="eyebrow">Our services</div>
+      <h2>From Manufacturing Systems to Intelligent Operations</h2>
+
+      <p class="muted section-intro">
+        Services can be scoped around your existing systems, operational
+        needs, available data and technical constraints.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3>MES/MOM Consulting & Implementation</h3>
+          <p class="muted">
+            Assess manufacturing execution requirements, map operational
+            workflows, define system requirements and plan implementation
+            and integration activities.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>MES/MOM Modernization</h3>
+          <p class="muted">
+            Evaluate existing manufacturing applications, interfaces,
+            workflows and data architecture to identify modernization
+            priorities and integration opportunities.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>AI-Enabled Manufacturing Transformation</h3>
+          <p class="muted">
+            Identify practical AI opportunities across manufacturing
+            operations, prioritize feasible use cases and develop a
+            roadmap based on data readiness and measurable objectives.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Custom AI/ML Development</h3>
+          <p class="muted">
+            Develop tailored analytics and machine learning solutions
+            involving data preparation, model evaluation and validation
+            against agreed performance criteria.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Generative AI & Knowledge Assistants</h3>
+          <p class="muted">
+            Explore assistants grounded in approved manuals, standard
+            operating procedures and service documentation, with
+            appropriate access controls and source references.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Industrial Systems Integration</h3>
+          <p class="muted">
+            Plan fit-for-purpose connections between industrial,
+            manufacturing and enterprise applications, considering
+            data quality, interoperability and operational constraints.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Process Deviation & Quality Analytics</h3>
+          <p class="muted">
+            Use suitable process and quality data to investigate
+            abnormal patterns, variation, potential root causes
+            and opportunities for operational improvement.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>MES Support & Maintenance</h3>
+          <p class="muted">
+            Support manufacturing application reliability through
+            troubleshooting, incident investigation, application
+            maintenance, performance reviews and continuous improvement.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Managed Services & AI Operations</h3>
+          <p class="muted">
+            Define ongoing support, monitoring, issue escalation,
+            model evaluation and improvement activities appropriate
+            to the deployed solution and agreed service scope.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="eyebrow">Our approach</div>
+      <h2>Small, Measurable Steps Toward Operational Value</h2>
+
+      <p class="muted section-intro">
+        A structured approach helps teams assess feasibility, reduce
+        implementation uncertainty and validate solutions before
+        expanding their scope.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <b>1. Discover</b>
+          <p class="muted">
+            Understand the operational challenge, stakeholders,
+            current systems and business constraints.
+          </p>
+        </div>
+
+        <div class="step">
+          <b>2. Assess & Prioritize</b>
+          <p class="muted">
+            Review data availability, integration requirements,
+            feasibility, risks and expected business value.
+          </p>
+        </div>
+
+        <div class="step">
+          <b>3. Pilot & Validate</b>
+          <p class="muted">
+            Evaluate the solution against agreed metrics, real-world
+            conditions and appropriate human review.
+          </p>
+        </div>
+
+        <div class="step">
+          <b>4. Integrate & Improve</b>
+          <p class="muted">
+            Plan deployment, monitoring, support, governance
+            and continuous improvement according to requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="why-decimal">
+      <div class="eyebrow">Our focus</div>
+      <h2>Connect Manufacturing Systems, Data & Decisions</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Operational Context</h3>
+          <p class="muted">
+            Consider production workflows, machine states, quality
+            requirements and existing systems when defining a solution.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Integration & Data Readiness</h3>
+          <p class="muted">
+            Consider source-system compatibility, data consistency,
+            access permissions and data quality before implementation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Responsible AI Adoption</h3>
+          <p class="muted">
+            Align AI use cases with appropriate validation, access
+            controls, monitoring and human oversight.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="eyebrow">Frequently asked questions</div>
+      <h2>Manufacturing Systems & Industrial AI FAQs</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>What is MES/MOM?</h3>
+          <p class="muted">
+            Manufacturing Execution Systems (MES) and Manufacturing
+            Operations Management (MOM) support the coordination,
+            monitoring and management of manufacturing operations.
+            Their scope depends on the production environment and
+            business requirements.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>How can AI help manufacturing operations?</h3>
+          <p class="muted">
+            Depending on data availability and use-case suitability,
+            AI can help analyze quality variation, process deviations,
+            energy consumption, equipment conditions and technical
+            documentation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Why is industrial data integration important?</h3>
+          <p class="muted">
+            Integration can help make relevant information from
+            shop-floor and enterprise systems available for reporting,
+            analytics and AI applications, subject to system
+            compatibility and appropriate controls.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>What does MES support involve?</h3>
+          <p class="muted">
+            Depending on the service agreement, MES support may include
+            troubleshooting, incident management, application maintenance,
+            interface monitoring and continuous improvement.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div>
+        <div class="eyebrow">Start a conversation</div>
+        <h2>Have a Manufacturing or Industrial AI Challenge?</h2>
+        <p>
+          Tell us about your manufacturing systems, operational
+          requirements or AI opportunity. Let's discuss the problem,
+          available data, integration needs and a practical next step.
+        </p>
+      </div>
+
+      <!-- Replace the placeholder with your real business email. -->
+      <a class="btn"
+         href="mailto:ramkumar.thangavel@gmail.com?subject=Manufacturing%20Solutions%20Discussion">
+        Contact Decimal Automation
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <span>
+      © <span id="year"></span> Decimal Automation. All rights reserved.
+    </span>
+    <span>
+      MES/MOM • Industrial Integration • Manufacturing AI
+    </span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
 </html>
