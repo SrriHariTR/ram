@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://decimalautomation.live/sitemap.xml
